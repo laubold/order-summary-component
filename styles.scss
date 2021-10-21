@@ -1,0 +1,176 @@
+// --------- //
+// Variables //
+// --------- //
+
+$font-family: 'Red Hat Display', sans-serif;
+$font-regular: 500;
+$font-bold: 700;
+$font-heavy: 900;
+
+
+// Colors // 
+
+$primary-pale-blue: hsl(225,100%, 94%);
+$primary-bright-blue: hsl(245,75%, 52%);
+$primary-bright-blue-active: hsl(245,75%, 66%);
+
+$neutral-very-pale-blue: hsl(225, 100%, 98%);
+$neutral-desaturated-blue: hsl(224, 23%, 55%);
+$neutral-dark-blue: hsl(223, 47%, 23%);
+
+// Box Shadows //
+
+$box-shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+$box-shadow-button-primary: rgba(115, 103, 170, 0.616) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;;
+// Breakpoints //
+
+$media-mobile: 375px;
+$desktop: 1440px;
+
+// Mixins //
+
+@mixin flexcc($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// ------------ //
+// Starter Scss //
+// ------------ //
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: $font-regular;
+  background-color: $primary-pale-blue;
+  height: 100%;
+  width: 100vw;
+  // center order summary
+  @include flexcc(column);
+}
+
+// ------------- //
+// Order Summary //
+// -Card Design- //
+// ------------- //
+
+.order-summary {
+  @include flexcc(column);
+  width: 86%;
+  max-width: 450px;
+  border-radius: 1.25rem;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: $box-shadow-card;
+
+  // Padding for content under hero image
+  &__content {
+    @include flexcc(column);
+    padding: 0 2rem 0.5rem 2rem;
+  }
+
+  // ---- //
+  // Text //
+  // ---- //
+  title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: $font-heavy;
+    color: $neutral-dark-blue;
+    margin: 2rem 0;
+  }
+
+  p {
+    color: $neutral-desaturated-blue;
+    text-align: center;
+    margin: 0 1rem 1.5rem 1rem;
+  }
+
+  // ----------------- //
+  // Subscription Card //
+  // ----------------- //
+  .subscription {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $neutral-very-pale-blue;
+    padding: 1.5rem 1rem;
+    border-radius: 0.8125rem;
+    margin-bottom: 1.75rem;
+
+    &__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 1.5rem;
+      line-height: 1.5rem;
+
+      .heading {
+        font-weight: $font-heavy;
+        color: $neutral-dark-blue;
+      }
+
+      .subheading {
+        color: $neutral-desaturated-blue;
+      }
+    }
+
+    &__action {
+      display: block;
+      color: $primary-bright-blue;
+      font-weight: $font-bold;
+      padding: 0.75rem 0;
+      &:active {
+        color: $primary-bright-blue-active;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // -------------- //
+  // Action Buttons //
+  // -------------- //
+
+  .button {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+
+    &.primary {
+      font-weight: $font-heavy;
+      color: #fff;
+      background-color: $primary-bright-blue;
+      box-shadow: $box-shadow-button-primary;
+      &:active {
+        background-color: $primary-bright-blue-active;
+      }
+    }
+
+    &.secondary {
+      font-weight: $font-heavy;
+      color: $neutral-desaturated-blue;
+      &:active {
+        color: $neutral-dark-blue;
+      }
+    }
+  }
+}

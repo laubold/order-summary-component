@@ -4,34 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
   
   <title>Frontend Mentor | Order summary card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+ 
 </head>
 <body>
+  <summary class="order-summary">
+      <img src="./images/illustration-hero.svg" alt="order-summary-hero-illustration">
+      <div class="order-summary__content">
+        <title>Order Summary</title>
+        <p>You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!</p>
+        <div class="subscription">
+          <img src="./images/icon-music.svg" alt="music-icon">
+          <div class="subscription__text">
+            <span class="heading">Annual Plan</span>
+            <span class="subheading">$59.99/year</span>
+            
+          </div>
+          <a class="subscription__action" href="#">Change</a>
 
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
+         
+    
+    
+        </div>
+        <a href="#" class="button primary">Proceed to Payment</a>
+        <a href="#" class="button secondary">Cancel Order</a>
+        
+      </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    
+  
+    
+    
+    
+  </summary>
+ 
 </body>
 </html>
